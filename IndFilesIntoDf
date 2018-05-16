@@ -1,0 +1,4 @@
+files <- list.files()
+data.list <- lapply(files, function(x){fread(x, select = c(1,5), sep="\t"})
+# concatenate into one big data.frame
+data.cat <- do.call(cbind, data.list)
